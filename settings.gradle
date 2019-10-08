@@ -1,0 +1,28 @@
+pluginManagement {
+    resolutionStrategy {
+        eachPlugin {
+            println("----->" + requested.id.id)
+            if (requested.id.id == "kotlin-platform-common") {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            }
+            if (requested.id.id == "kotlin-platform-jvm") {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            }
+//            if (requested.id.id == "kotlin-platform-js") {
+            if (requested.id.id == "org.jetbrains.kotlin.js") {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            }
+        }
+    }
+}
+
+rootProject.name = 'MultiPlatformSample'
+enableFeaturePreview('GRADLE_METADATA')
+
+// "Preferences | Experimental | Only sync the active variant" = Off
+include ":core"
+include ":app-js"
+include ":app-jvm"
+include ":app-win"
+//include ":app-android"
+

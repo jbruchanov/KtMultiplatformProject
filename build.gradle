@@ -1,0 +1,14 @@
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
+    maven {
+        url "https://dl.bintray.com/kotlin/kotlin-eap"
+    }
+}
+
+group 'com.example'
+version '0.0.1'
+
+apply plugin: 'maven-publish'
+
